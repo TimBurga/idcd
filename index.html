@@ -1,20 +1,4 @@
 <html>
-    <script>
-        fetch('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&origin=*&format=json&pageids=5058628&exintro&explaintext')
-        .then(res => res.json())
-        .then(res => {
-            let x = res.query.pages["5058628"].extract.search('died');
-
-            if (x >= 0){
-                document.getElementById("results").innerHTML ="Yes!";
-            } else {
-                document.getElementById("results").innerHTML = "No";
-            }
-        })
-        .catch(err => {
-            document.getElementById("results").innerHTML = "Uncertain";
-        })
-    </script>
     <style>
         body, html {
             height: 100%;
@@ -43,7 +27,7 @@
     </style>
     <body class="bg">
         <div class="container">
-            <h1 id="results" class="results"></h1>
+            <h1 id="results" class="results">Yes</h1>
         </div>
     </body>
 </html>
